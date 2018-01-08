@@ -9,5 +9,8 @@ to process the numerical calculation. Three-dimensional spreading problem will b
 Basically, compared with two-dimensional problem, three-dimensional case will do the same work but in three-dimensional space. 
 In the very last part, I will draw a conclusion about almost everything that has been achieved in my work.
 
+2d simulation:
 ![2d simulation](https://github.com/lzdh/Spreading-of-Water-Waves/blob/master/2d-animation.gif)
+
+3d simulation:
 ![3d simulation](https://github.com/lzdh/Spreading-of-Water-Waves/blob/master/3d-animation.gif)

@@ -1,0 +1,32 @@
+% Situation 1: φ*0 = 0, H*0 = πe^(−|k|).
+  restart;
+  g := 9.8;
+  h := 1;
+  t := 0;
+  z := 0;
+phi0star := 0;
+H0star := Pi*exp(-abs(k));
+omega := sqrt(g*k*tanh(k*h));
+
+phi[t] := -phi0star*omega*sin(omega*t)-g*H0star*cos(omega*t);
+eta := -(int(phi[t]*exp(I*k*x), k = -infinity .. infinity))/(2*Pi*g);
+plot(eta)
+
+% Situation two: φ*0 = πe^(−|k|), H*0 = 0.
+  restart;
+  g := 9.8;
+  h := 1;
+  t := 0.1;
+  z := 0;
+
+omega := sqrt(g*k*tanh(k*h));
+phi0star := Pi*exp(-abs(k));
+H0star := 0;
+phi[t] := -phi0star*omega*sin(omega*t)-g*H0star*cos(omega*t);
+eta := -(int(phi[t]*exp(I*k*x), k = -infinity .. infinity))/(2*Pi*g);
+plot(eta)
+
+%animations are from t = 0 to t = 10 and last for 10 seconds consist of the plots at 101 time points..
+with(plots);
+animate(plot, [(int(phi[t]*exp(I*k*x), k = 0 .. 10))/(2*Pi*g),x = -10 .. 10],
+ T = 0 .. 10, frames = 101)

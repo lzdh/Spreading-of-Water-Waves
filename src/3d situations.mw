@@ -16,6 +16,8 @@ Situation one:
             -g*B0nstar*cos(omega*t))*BesselJ(n, k*r)*k, k = 0 .. 5))*
             cos(n*theta),n = 0 .. nfinal))/g) end proc
 > plot(etafun(r, 0), r = 0 .. 1)
+
+
 Situation two:
 > restart;
 > g := 9.8;

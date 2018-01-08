@@ -1,0 +1,54 @@
+Situation one:
+ > restart;
+> g := 9.8;
+> h := 1;
+> t := 0.4;
+> z := 0;
+> omega := sqrt(g*k*tanh(k*h));
+> A0nstar := 3*k^n*exp(-(1/4)*k^2)/2^(n+1);
+> B0nstar := 0;
+> nfinal := 1;
+> Fnstar := A0nstar*cos(omega*t)-g*B0nstar*sin(omega*t)/omega;
+> Fn := proc (r, z, t) options operator, arrow; evalf(int(Fnstar*Bessel
+        J(n, k*r)*k,k = 0 .. infinity)) end proc;
+> phi := sum(Fn*cos(n*theta), n = 0 .. nfinal);
+> etafun := (r, theta) -> evalf(-(sum((int((-A0nstar*omega*sin(omega*t)
+            -g*B0nstar*cos(omega*t))*BesselJ(n, k*r)*k, k = 0 .. 5))*
+            cos(n*theta),n = 0 .. nfinal))/g) end proc
+> plot(etafun(r, 0), r = 0 .. 1)
+Situation two:
+> restart;
+> g := 9.8;
+> h := 1;
+> t := 0.1;
+> z := 0;
+> omega := sqrt(g*k*tanh(k*h));
+> A0nstar := k^n*exp(-(1/4)*k^2)/2^(n+1);
+> B0nstar := 0;
+> nfinal := 1;
+> Fnstar := A0nstar*cos(omega*t)-g*B0nstar*sin(omega*t)/omega;
+> Fn := proc (r, z, t) options operator, arrow; evalf(int(Fnstar*Bessel
+        J(n, k*r)*k,k = 0 .. infinity)) end proc;
+>
+> phi := sum(Fn*cos(n*theta), n = 0 .. nfinal);
+>
+> etafun := (r, theta) -> evalf(-(sum((int((-A0nstar*omega*sin(omega*t)
+            -g*B0nstar*cos(omega*t))*BesselJ(n, k*r)*k, k = 0 .. 5))*
+            cos(n*theta),n = 0 .. nfinal))/g) end proc;
+            
+Initial status (situation one and two use the same code):
+> z := ’z’;
+> addcoords(z_cylindrical, [z, r, theta], [r*cos(theta), r*sin(theta),
+z]);
+>
+> plot3d(-(sum((int((-A0nstar*omega*sin(omega*t)-g*B0nstar*
+        cos(omega*t))*BesselJ(n, k*r)*k, k = 0 .. 5))*cos(n*theta),
+        n = 0 .. nfinal))/g,r = 0 .. 10, theta = 0 .. 2*Pi, coords =
+        z_cylindrical, axes = boxed,scaling = constrained);
+Spreading animation (situation one and two use the same code as well):
+> with(plots);
+> animate3d(-(sum((int((-A0nstar*omega*sin(omega*T)-g*B0nstar*
+            cos(omega*T))*BesselJ(n, k*r)*k, k = 0 .. 5))*cos(n*theta),
+            n = 0 .. nfinal))/g,r = 0 .. 10, theta = 0 .. 2*Pi,
+            T = 0 .. 10, frames = 101,coords = z_cylindrical,
+            axes = boxed);

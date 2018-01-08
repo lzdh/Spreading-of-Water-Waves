@@ -1,0 +1,17 @@
+
+  restart;
+  g := 9.8;
+  h := 1;
+  t := 0;
+  z := 0;
+phi0star := 0;
+H0star := Pi*exp(-abs(k));
+omega := sqrt(g*k*tanh(k*h));
+φ∗0 = 0,
+H0∗ = πe−|k|.
+phi[t] := -phi0star*omega*sin(omega*t)-g*H0star*cos(omega*t);
+eta := -(int(phi[t]*exp(I*k*x), k = -infinity .. infinity))/(2*Pi*g);
+plot(eta)
+
+
+

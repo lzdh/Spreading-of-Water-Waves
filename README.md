@@ -15,3 +15,6 @@ In the very last part, I will draw a conclusion about almost everything that has
 3d simulation:
 ![3d simulation](https://github.com/lzdh/Spreading-of-Water-Waves/blob/master/3d-animation.gif)
 ![](https://github.com/lzdh/Spreading-of-Water-Waves/blob/master/3d-animation2.gif)
+<p align="center">
+  <img /https://github.com/lzdh/Spreading-of-Water-Waves/blob/master/3d-animation2.gif>
+</p>

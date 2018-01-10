@@ -23,4 +23,4 @@ Comparing with the two-dimensional problem, three-dimensional case are almost th
 All content in this repository is openly licensed with a CC BY 4.0, which means you're free to use the materials and remix them so long as you **credit the source**.
 
 If you were to use content from this repo in your own work, please attribute me with a sentence like: 
-> The material in or partially derived from "[Spreading of Water Waves](https://github.com/lzdh/Spreading-of-Water-Waves)" by Jessie Liu.
+> The material is partially derived from Zhangdaihong Liu's project "[Spreading of Water Waves](https://github.com/lzdh/Spreading-of-Water-Waves)".
